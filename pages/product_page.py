@@ -12,6 +12,12 @@ class ProductPage(BasePage):
         self.browser.find_element(*ProductPageLocators.ADD_CART_BUTTON).click()
         self.solve_quiz_and_get_code()
 
+    def get_book_name(self):
+        return self.browser.find_element(*ProductPageLocators.BOOK_NAME).text
+
+    def get_book_price(self):
+        return self.browser.find_element(*ProductPageLocators.BOOK_PRICE).text
+
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
@@ -26,12 +32,10 @@ class ProductPage(BasePage):
         except NoAlertPresentException:
             print("No second alert presented")
 
-    def should_be_name_book_in_cart(self):
-        assert self.browser.find_element(*ProductPageLocators.BOOK_NAME).text \
-               == self.browser.find_element(*ProductPageLocators.BOOK_NAME_IN_MESSAGE).text, "Имя не совпадает в сообщении"
+    def should_be_name_book_in_cart(self, book_name):
+        assert book_name == self.browser.find_element(*ProductPageLocators.BOOK_NAME_IN_MESSAGE).text, "Имя не совпадает в сообщении"
 
-    def should_be_price_book_in_cart(self):
-        assert self.browser.find_element(*ProductPageLocators.BOOK_PRICE).text \
-               == self.browser.find_element(*ProductPageLocators.BOOK_PRICE_IN_MESSAGE).text, "Цена не совпадает в сообщении"
+    def should_be_price_book_in_cart(self, book_price):
+        assert book_price == self.browser.find_element(*ProductPageLocators.BOOK_PRICE_IN_MESSAGE).text, "Цена не совпадает в сообщении"
 
 
