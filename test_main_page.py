@@ -1,6 +1,11 @@
 import time
 
-def test_view_button_add_cart(browser):
-    browser.get("http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/")
-    time.sleep(30)
-    assert browser.find_element_by_css_selector('.btn-add-to-basket').is_displayed(), "Нет кнопки добавить в корзину"
+link = "http://selenium1py.pythonanywhere.com/"
+
+def go_to_login_page(browser):
+    login_link = browser.find_element_by_css_selector("#login_link")
+    login_link.click()
+
+def test_guest_can_go_to_login_page(browser):
+    browser.get(link)
+    go_to_login_page(browser)
