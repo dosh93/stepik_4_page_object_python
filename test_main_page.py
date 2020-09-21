@@ -1,8 +1,8 @@
 import pytest
 
-from pages.cart_page import CartPage
-from pages.login_page import LoginPage
-from .pages.main_page import MainPage
+from .pages.basket_page import BasketPage
+from .pages.login_page import LoginPage
+from pages.main_page import MainPage
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
@@ -25,5 +25,5 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     page = MainPage(browser, link)
     page.open()
     page.open_cart()
-    page = CartPage(browser, browser.current_url)
+    page = BasketPage(browser, browser.current_url)
     page.should_empty_cart()

@@ -25,6 +25,6 @@ class BasePageLocators():
     VIEW_CART_BUTTON = (By.XPATH, "(//a[contains(@href,'basket')])[1]")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
-class CartPageLocators():
+class BasketPageLocators():
     BASKET_ITEMS = (By.CSS_SELECTOR, ".basket-items")
     CONTENT_INNER = (By.CSS_SELECTOR, "#content_inner")
