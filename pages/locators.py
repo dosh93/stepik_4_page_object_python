@@ -14,3 +14,4 @@ class ProductPageLocators():
     BOOK_PRICE = (By.XPATH, "//p[@class='price_color']")
     BOOK_NAME_IN_MESSAGE = (By.XPATH, "(//div[@class='alertinner '])[1]/strong")
     BOOK_PRICE_IN_MESSAGE = (By.XPATH, "(//div[@class='alertinner '])[3]/p/strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
