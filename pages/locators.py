@@ -15,3 +15,7 @@ class ProductPageLocators():
     BOOK_NAME_IN_MESSAGE = (By.XPATH, "(//div[@class='alertinner '])[1]/strong")
     BOOK_PRICE_IN_MESSAGE = (By.XPATH, "(//div[@class='alertinner '])[3]/p/strong")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
